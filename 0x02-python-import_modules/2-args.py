@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+
 import sys
+
 a = len(sys.argv) - 1
 if a == 0:
     print("0 argument.")
@@ -8,4 +10,4 @@ elif a == 1:
 else:
     print("{} arguments:".format(a))
 for i in range(a):
-    print("{}: {}".format(a + 1, sys. argv[i + 1]))
+    print("{}: {}".format(a + 1, sys.argv[i + 1]))
