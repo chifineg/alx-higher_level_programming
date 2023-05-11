@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-
+from sys import argv
 if __name__ == "__main__":
-    """Prints argument list and their number."""
-    import sys
-
-    length = len(sys.argv) - 1
+    length = len(argv) - 1
     if length == 0:
-        print("0 arguments.")
+        print("{:d} arguments.".format(length))
     elif length == 1:
-        print("1 argument:")
+        print("{:d} argument:".format(length))
     else:
-        print("{} arguments:".format(length))
-    for i in range(length):
-        print("{}: {}".format(i + 1, sys.argv[i + 1]))
+        print("{:d} arguments:".format(length))
+    list_args = []
+    for i in argv:
+        list_args += [i]
+    for j in range(1, len(list_args)):
+        print("{}: {}".format(j, list_args[j]))
