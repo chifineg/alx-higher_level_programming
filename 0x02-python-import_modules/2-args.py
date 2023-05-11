@@ -1,25 +1,15 @@
 #!/usr/bin/python3
 from sys import argv
-
-
-def main():
-    length = len(argv) - 1
-    word = "arguments"
-
-    if length == 0:
-        print(f"{length} {word}.")
-    elif length != 1:
-        print(f"{length} {word}:")
+if __name__ == "__main__":
+    num = len(argv) - 1
+    if num == 0:
+        print("{:d} arguments.".format(num))
+    elif num == 1:
+        print("{:d} argument:".format(num))
     else:
-        word = "argument"
-        print(f"{length} {word}:")
-
-    if length >= 1:
-        for count, args in enumerate(argv):
-            if count == 0:
-                continue
-            print(f"{count}: {args}")
-
-
-if __name__ == '__main__':
-    main()
+        print("{:d} arguments:".format(num))
+    list_args = []
+    for c in argv:
+        list_args += [c]
+    for i in range(1, len(list_args)):
+        print("{}: {}".format(i, list_args[i]))
