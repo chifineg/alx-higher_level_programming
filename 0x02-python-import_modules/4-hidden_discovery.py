@@ -7,4 +7,4 @@ if __name__ == "__main__":
     ident = dir(hidden_4)
     for i in ident:
         if i[:2] != "__":
-            print(i)
+            print("{:s}".format(i))
