@@ -2,9 +2,6 @@
 
 def element_at(my_list, idx):
     length = len(my_list)
-    if idx < 0:
+    if idx < 0 or idx > length:
         return
-    elif idx > length:
-        return
-    else:
-        return(my_list[idx])
+    return(my_list[idx])
