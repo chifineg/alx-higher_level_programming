@@ -1,30 +1,29 @@
 #!/usr/bin/python3
-"""
-3 by 2 matrix  module.
-This module defines  one function, matrix_divided(matrix, div).
-"""
+"""defines function to scalar divde matrix"""
 
 
 def matrix_divided(matrix, div):
-    """Divides each  element in the matrix by given number div"""
+    """divides matrix by scalar integer, rounded to two decimal places"""
+    import decimal
+    error_msg = "matrix must be a matrix (list of lists) of integers/floats"
     if type(matrix) is not list:
-        raise TypeError(
-            "matrix must be a matrix (list of lists) of integers/floats")
-    size = None
-    for lent in matrix:
-        if type(lent) is not list:
-            raise TypeError(
-                "matrix must be a matrix (list of lists) of integers/floats")
-        if size is None:
-            size = len(l)
-        elif size != len(l):
-            raise TypeError("Each row of the matrix must have the same size")
-        for i in lent:
-            if type(i) is not int and type(i) is not float:
-                raise TypeError("matrix must be a matrix (list of lists) of \
-integers/floats")
-    if type(div) is not int and type(div) is not float:
+        raise TypeError(error_msg)
+    len_rows = []
+    row_count = 0
+    for row in matrix:
+        if type(row) is not list:
+            raise TypeError(error_msg)
+        len_rows.append(len(row))
+        for element in row:
+            if type(element) not in [int, float]:
+                raise TypeError(error_msg)
+        row_count += 1
+    if len(set(len_rows)) > 1:
+        raise TypeError("Each row of the matrix must have the same size")
+    if type(div) not in [int, float]:
         raise TypeError("div must be a number")
-    if div == 0:
+    if int(div) == 0:
         raise ZeroDivisionError("division by zero")
-    return [[round(i / div, 2) for i in lent] for lent in matrix]
+    new_matrix = list(map(lambda row:
+                          list(map(lambda x: round(x/div, 2), row)), matrix))
+    return new_matrix
