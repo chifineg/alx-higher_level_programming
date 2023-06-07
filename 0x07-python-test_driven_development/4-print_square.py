@@ -5,6 +5,7 @@
     this program draws a square
 """
 
+
 def print_square(size):
     """ function starts here """
     if type(size) is not int:

@@ -5,6 +5,7 @@
     program to indent given texts
 """
 
+
 def text_indentation(text):
     """ function starts here """
     if type(text) is not str:
