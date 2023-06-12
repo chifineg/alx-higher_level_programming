@@ -6,10 +6,12 @@ program starts here
 
 class MyList(list):
     """list is supperclass of MyList"""
-    def __init__(self):
-        """object initialization"""
-        super().__init__()
-
     def print_sorted(self):
-        """sorts list in ascending order"""
-        print(sorted(self))
+    """Object initialization
+    Prints a sorted list in ascending order
+    """
+
+        new_list = self[:]
+        new_list.sort()
+        print("{}".format(new_list))
+
