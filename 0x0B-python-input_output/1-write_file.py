@@ -3,8 +3,8 @@
 
 
 def write_file(filename="", text=""):
-    """ function to write texts to a file 
-    
+    """ function to write texts to a file
+
     Args:
         filename (str): The name of the file to write.
         text (str): The text to write to the file.
